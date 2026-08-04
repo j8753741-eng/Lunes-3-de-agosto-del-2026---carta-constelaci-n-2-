@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>✦ Donde Mi Corazón Quiso Robarle La Fiebre Al Cielo ✦</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:'Cormorant Garamond',serif;
+color:white;
+overflow-x:hidden;
+background:
+radial-gradient(circle at top,#3d215f 0%,#1b1435 28%,#090914 65%,#040409 100%);
+min-height:100vh;
+
+}
+
+
+/*==========================
+NEBULOSAS
+===========================*/
+
+body::before{
+
+content:"";
+position:fixed;
+width:900px;
+height:900px;
+border-radius:50%;
+background:
+radial-gradient(circle,
+rgba(255,170,255,.18),
+transparent 72%);
+top:-320px;
+left:-260px;
+filter:blur(45px);
+animation:nebula1 18s ease-in-out infinite alternate;
+pointer-events:none;
+z-index:-5;
+
+}
+
+body::after{
+
+content:"";
+position:fixed;
+width:850px;
+height:850px;
+border-radius:50%;
+background:
+radial-gradient(circle,
+rgba(130,170,255,.16),
+transparent 70%);
+bottom:-350px;
+right:-250px;
+filter:blur(55px);
+animation:nebula2 20s ease-in-out infinite alternate;
+pointer-events:none;
+z-index:-5;
+
+}
+
+@keyframes nebula1{
+
+0%{
+transform:translate(0,0) scale(1);
+}
+
+100%{
+transform:translate(60px,-50px) scale(1.2);
+}
+
+}
+
+@keyframes nebula2{
+
+0%{
+transform:translate(0,0) scale(1);
+}
+
+100%{
+transform:translate(-80px,40px) scale(1.18);
+}
+
+}
+
+
+
+/*==========================
+ESTRELLAS
+===========================*/
+
+.star{
+
+position:fixed;
+width:3px;
+height:3px;
+border-radius:50%;
+background:white;
+box-shadow:
+0 0 6px white,
+0 0 12px white;
+
+animation:
+twinkle linear infinite;
+
+opacity:.9;
+pointer-events:none;
+
+}
+
+@keyframes twinkle{
+
+0%{
+
+transform:scale(.4);
+opacity:.2;
+
+}
+
+50%{
+
+transform:scale(1.8);
+opacity:1;
+
+}
+
+100%{
+
+transform:scale(.4);
+opacity:.3;
+
+}
+
+}
+
+
+
+/*==========================
+POLVO ESTELAR
+===========================*/
+
+.dust{
+
+position:fixed;
+width:2px;
+height:2px;
+background:#ffdfff;
+border-radius:50%;
+opacity:.35;
+pointer-events:none;
+animation:floatDust linear infinite;
+
+}
+
+@keyframes floatDust{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-130vh);
+
+}
+
+}
+
+
+
+/*==========================
+CONTENEDOR
+===========================*/
+
+.wrapper{
+
+position:relative;
+max-width:950px;
+margin:auto;
+padding:
+70px 25px
+100px;
+
+}
+
+
+
+/*==========================
+ESTRELLA CENTRAL
+===========================*/
+
+.hero{
+
+text-align:center;
+margin-bottom:55px;
+position:relative;
+
+}
+
+.hero::before{
+
+content:"";
+position:absolute;
+left:50%;
+top:-45px;
+transform:translateX(-50%);
+width:240px;
+height:240px;
+border-radius:50%;
+background:
+radial-gradient(circle,
+rgba(255,255,255,.18),
+transparent 70%);
+filter:blur(30px);
+
+animation:
+halo 5s ease-in-out infinite;
+
+}
+
+@keyframes halo{
+
+50%{
+
+transform:
+translateX(-50%)
+scale(1.18);
+
+}
+
+}
+
+.hero-star{
+
+font-size:90px;
+
+display:inline-block;
+
+animation:
+pulse 4s infinite;
+
+filter:
+drop-shadow(0 0 10px white)
+drop-shadow(0 0 25px #ffd9ff)
+drop-shadow(0 0 40px #ffd9ff);
+
+}
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.18)
+rotate(8deg);
+
+}
+
+}
+
+h1{
+
+font-family:'Cinzel',serif;
+
+margin-top:12px;
+
+font-size:39px;
+
+line-height:1.4;
+
+letter-spacing:2px;
+
+text-shadow:
+0 0 20px rgba(255,255,255,.35);
+
+}
+
+.subtitle{
+
+margin-top:20px;
+
+font-size:25px;
+
+color:#ffe4fb;
+
+font-style:italic;
+
+}
+
+
+
+/*==========================
+CONSTELACIÓN
+===========================*/
+
+.constellation{
+
+position:absolute;
+
+top:70px;
+left:0;
+width:100%;
+height:260px;
+
+pointer-events:none;
+
+}
+
+.node{
+
+position:absolute;
+
+width:9px;
+height:9px;
+
+background:white;
+
+border-radius:50%;
+
+box-shadow:
+
+0 0 10px white,
+0 0 20px white,
+0 0 35px #ffd7ff;
+
+animation:
+sparkle 3s infinite;
+
+}
+
+.line{
+
+position:absolute;
+
+height:2px;
+
+background:
+
+linear-gradient(to right,
+rgba(255,255,255,.15),
+rgba(255,255,255,.55),
+rgba(255,255,255,.15));
+
+transform-origin:left center;
+
+border-radius:5px;
+
+}
+
+@keyframes sparkle{
+
+50%{
+
+transform:scale(1.6);
+
+}
+
+}
+
+
+
+/*==========================
+CARTA
+===========================*/
+
+.card{
+
+position:relative;
+
+margin-top:150px;
+
+padding:
+
+55px
+45px;
+
+border-radius:32px;
+
+background:
+
+linear-gradient(
+180deg,
+rgba(255,255,255,.10),
+rgba(255,255,255,.05));
+
+backdrop-filter:blur(18px);
+
+border:
+
+1px solid rgba(255,255,255,.18);
+
+box-shadow:
+
+0 0 70px rgba(255,180,255,.10);
+
+overflow:hidden;
+
+}
+
+.card::before{
+
+content:"";
+
+position:absolute;
+top:0;
+left:0;
+
+width:100%;
+height:6px;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+#ffffff,
+#ffd7f8,
+#ffffff,
+transparent);
+
+opacity:.85;
+
+}
+
+
+.card::after{
+
+content:"✦";
+
+position:absolute;
+
+right:25px;
+bottom:18px;
+
+font-size:32px;
+
+color:rgba(255,255,255,.18);
+
+}
+
+
+/*==========================
+INICIO DE LA CARTA
+==========================*/
+
+.letter-start{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+margin-bottom:25px;
+
+}
+
+.letter-star{
+
+font-size:34px;
+
+color:#ffe9ff;
+
+filter:
+
+drop-shadow(0 0 10px white);
+
+}
+
+.greeting{
+
+font-size:33px;
+
+font-weight:600;
+
+color:#fff;
+
+}
+
+
+/*==========================
+PÁRRAFOS
+==========================*/
+
+p{
+
+font-size:25px;
+
+line-height:2.05;
+
+margin-bottom:28px;
+
+color:#f9f6ff;
+
+text-align:justify;
+
+}
+
+p strong{
+
+color:#ffffff;
+
+font-weight:700;
+
+}
+
+
+.first::first-letter{
+
+font-size:72px;
+
+float:left;
+
+line-height:.8;
+
+padding-right:10px;
+
+font-family:'Cinzel',serif;
+
+color:#ffe6ff;
+
+text-shadow:
+
+0 0 12px rgba(255,255,255,.55);
+
+}
+
+
+/*==========================
+SEPARADOR
+==========================*/
+
+.separator{
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+gap:18px;
+
+margin:
+
+45px 0;
+
+font-size:20px;
+
+color:#ffdff8;
+
+opacity:.9;
+
+}
+
+.separator::before,
+.separator::after{
+
+content:"";
+
+width:120px;
+height:1px;
+
+background:
+linear-gradient(
+to right,
+transparent,
+rgba(255,255,255,.55),
+transparent);
+
+}
+
+
+/*==========================
+FRASE FINAL
+==========================*/
+
+.final{
+
+margin-top:65px;
+
+padding:
+
+40px
+35px;
+
+border-radius:24px;
+
+background:
+
+linear-gradient(
+180deg,
+rgba(255,255,255,.06),
+rgba(255,255,255,.03));
+
+border:
+
+1px solid rgba(255,255,255,.15);
+
+text-align:center;
+
+font-size:28px;
+
+line-height:2;
+
+color:#ffe6fb;
+
+font-style:italic;
+
+box-shadow:
+
+0 0 40px rgba(255,180,255,.08);
+
+}
+
+
+/*==========================
+BOTÓN
+==========================*/
+
+.button{
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+gap:12px;
+
+margin:
+
+55px auto 15px;
+
+padding:
+
+20px 34px;
+
+width:max-content;
+
+border-radius:999px;
+
+background:
+
+linear-gradient(
+135deg,
+#7d4cff,
+#d96bff,
+#ff8bc8);
+
+text-decoration:none;
+
+color:white;
+
+font-size:23px;
+
+font-weight:bold;
+
+box-shadow:
+
+0 0 18px #a15cff,
+0 0 45px rgba(255,150,255,.35);
+
+transition:.45s;
+
+}
+
+.button:hover{
+
+transform:
+
+translateY(-5px)
+scale(1.05);
+
+box-shadow:
+
+0 0 25px #ffffff,
+0 0 65px #d96bff;
+
+}
+
+
+/*==========================
+FIRMA
+==========================*/
+
+.signature{
+
+margin-top:45px;
+
+text-align:center;
+
+font-size:30px;
+
+color:#fff3ff;
+
+line-height:1.8;
+
+}
+
+
+.signature span{
+
+display:block;
+
+margin-top:10px;
+
+font-size:22px;
+
+letter-spacing:3px;
+
+color:#ffd8fa;
+
+}
+
+
+/*==========================
+RESPONSIVE
+==========================*/
+
+@media(max-width:700px){
+
+h1{
+
+font-size:28px;
+
+}
+
+.subtitle{
+
+font-size:20px;
+
+}
+
+.hero-star{
+
+font-size:72px;
+
+}
+
+.card{
+
+padding:38px 26px;
+
+margin-top:120px;
+
+}
+
+p{
+
+font-size:22px;
+
+line-height:1.9;
+
+}
+
+.greeting{
+
+font-size:29px;
+
+}
+
+.final{
+
+font-size:23px;
+
+padding:30px 22px;
+
+}
+
+.button{
+
+font-size:20px;
+
+padding:18px 24px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<script>
+
+/*==========================
+ESTRELLAS
+==========================*/
+
+for(let i=0;i<170;i++){
+
+let s=document.createElement("div");
+
+s.className="star";
+
+s.style.left=Math.random()*100+"%";
+s.style.top=Math.random()*100+"%";
+
+let size=Math.random()*3+1;
+
+s.style.width=size+"px";
+s.style.height=size+"px";
+
+s.style.animationDuration=
+(Math.random()*5+2)+"s";
+
+document.body.appendChild(s);
+
+}
+
+/*==========================
+POLVO ESTELAR
+==========================*/
+
+for(let i=0;i<60;i++){
+
+let d=document.createElement("div");
+
+d.className="dust";
+
+d.style.left=Math.random()*100+"%";
+d.style.top=Math.random()*120+"%";
+
+d.style.animationDuration=
+(Math.random()*30+15)+"s";
+
+document.body.appendChild(d);
+
+}
+
+</script>
+
+<div class="wrapper">
+
+<div class="hero">
+
+<div class="hero-star">
+✦
+</div>
+
+<h1>
+
+DONDE MI CORAZÓN<br>
+QUISO ROBARLE LA FIEBRE AL CIELO
+
+</h1>
+
+<div class="subtitle">
+
+Para mi refugio de luna, la mujer que ilumina incluso mis noches más oscuras.
+
+</div>
+
+</div>
+
+<div class="constellation">
+
+<div class="node" style="left:12%;top:90px;"></div>
+<div class="node" style="left:24%;top:45px;"></div>
+<div class="node" style="left:39%;top:105px;"></div>
+<div class="node" style="left:55%;top:55px;"></div>
+<div class="node" style="left:73%;top:120px;"></div>
+<div class="node" style="left:87%;top:70px;"></div>
+
+<div class="line" style="left:13%;top:94px;width:120px;transform:rotate(-23deg);"></div>
+
+<div class="line" style="left:25%;top:48px;width:145px;transform:rotate(22deg);"></div>
+
+<div class="line" style="left:40%;top:104px;width:145px;transform:rotate(-18deg);"></div>
+
+<div class="line" style="left:56%;top:60px;width:155px;transform:rotate(24deg);"></div>
+
+<div class="line" style="left:74%;top:122px;width:120px;transform:rotate(-25deg);"></div>
+
+</div>
+
+<div class="card">
+
+<div class="letter-start">
+
+<div class="letter-star">
+✦
+</div>
+
+<div class="greeting">
+
+Mi refugio de luna ❤️
+
+</div>
+
+</div>
+
+<p class="first">
+Hoy volvió a empezar la semana, pero sentí que el mundo caminaba más despacio porque había algo en tus ojos que no pude entender del todo. Hubo momentos en los que parecías querer llorar y, aunque estuve a tu lado, me quedó esa sensación de no haber podido abrazar toda la tristeza que llevabas por dentro. Si hubiera existido una forma de cargar con ella para que tú sonrieras, lo habría hecho <strong>sin pensarlo ni un solo instante.</strong>
+</p>
+
+<div class="separator">✦ ✧ ✦</div>
+
+<p>
+Después, cuando sentí el calor de tu frente y supe que tenías fiebre, todo lo demás dejó de importar. En ese instante entendí una vez más que, <strong>por encima de cualquier cosa, mi mayor preocupación siempre vas a ser tú.</strong> No me importa cómo me encuentre yo si sé que tú no estás bien. Mi corazón siempre correrá primero hacia donde estés.
+</p>
+
+<p>
+Cuando llegué a casa seguía pensando en ti. Esperé tus mensajes, imaginando que tal vez te habías quedado dormida, y cuando al fin me respondiste sentí un pequeño alivio al saber que la fiebre había bajado y que te sentías un poquito mejor. Ojalá ese <strong>"un poco"</strong> mañana se convierta en un <strong>"ya estoy bien"</strong>, porque no sabes cuánto deseo volver a verte sonriendo.
+</p>
+
+<div class="separator">🌙 ✦ 🌙</div>
+
+<p>
+A veces me siento impotente por no poder estar contigo cuando más quisiera. Daría cualquier cosa por poder tomar tu mano esta noche, acariciar tu cabello y decirte al oído que todo va a estar bien, hasta que el sueño volviera a encontrarte sin preocupaciones.
+</p>
+
+<p>
+Y si mañana despiertas mejor, prometo aprovechar cada instante que la vida nos regale antes de que vuelvas a trabajar. Quiero llenar ese tiempo de abrazos, de miradas y de esos pequeños momentos que terminan convirtiéndose en los recuerdos más hermosos de mi vida.
+</p>
+
+<div class="separator">⭐ ❤️ ⭐</div>
+
+<p>
+Descansa, <strong>mi refugio de luna.</strong> Deja que esta noche sane tu cuerpo mientras mi amor intenta abrazar tu alma desde la distancia. Aquí estaré, como hoy, como mañana y como cada día que venga, cuidándote incluso cuando lo único que puedo hacer es preguntar cómo estás y esperar tu respuesta con el corazón en las manos.
+</p>
+
+<p>
+Te amo con una intensidad que ni la distancia, ni el cansancio, ni las noches pueden apagar. Y mientras exista un mañana para volver a encontrarte, siempre habrá un motivo más para seguir enamorándome de ti.
+</p>
+
+<p>
+<strong>Buenas noches, mi refugio de luna.</strong> Que descanses... y que mañana el mundo tenga el privilegio de volver a ver tu sonrisa, porque yo ya la estoy esperando con todo mi corazón. ❤️
+</p>
+
+<div class="final">
+
+Y si algún día las estrellas dejaran de existir y el universo entero se quedara sin luz, no tendría miedo, porque aprendería a reconstruir el cielo solamente con cada recuerdo que tengo contigo. Cada abrazo tuyo sería una nueva galaxia, cada sonrisa una estrella imposible de apagar y cada latido de tu corazón el lugar donde siempre querría vivir. No importa cuántas noches pasen, cuántas dificultades aparezcan o cuántas veces la vida intente poner distancia entre nosotros; siempre encontraré el camino para volver a ti, porque mi destino no está escrito en el cielo... está escrito en tu nombre. Hoy, mañana y todos los días elegiría cuidar de ti, preocuparme por ti, abrazarte y amarte con todo lo que soy, porque tú eres el lugar donde mi alma descansa y donde mi corazón entiende el verdadero significado de la felicidad.
+
+<strong>
+Para ti, VALERIA PETRO VILLAZÓN • MI MUJER HERMOSA Y FUERTE. ❤️✨
+</strong>
+
+</div>
+
+<div class="signature">
+
+Con todo mi amor...
+
+<span>
+PARA SIEMPRE, TU NIÑO ❤️
+</span>
+
+</div>
+
+<a class="button"
+href="AQUI_PEGA_EL_LINK_DEL_POEMA">
+
+🌙 ✦ Leer el poema de esta noche ✦ 🌙
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
